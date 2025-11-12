@@ -1,0 +1,94 @@
+# ------------------------------
+# Python
+# ------------------------------
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Virtual environment
+.venv/
+env/
+venv/
+ENV/
+
+# Byte-compiled / optimized / DLL files
+*.pyc
+*.pyo
+*.pyd
+
+# C extensions
+*.so
+
+# ------------------------------
+# Flask / App Config
+# ------------------------------
+instance/
+*.db
+*.sqlite3
+*.sqlite
+
+# Local environment variables
+.env
+.env.*
+
+# Flask cache or sessions
+*.pid
+*.log
+*.bak
+*.swp
+
+# ------------------------------
+# IDE / Editor
+# ------------------------------
+.vscode/
+.idea/
+*.sublime-project
+*.sublime-workspace
+
+# ------------------------------
+# OS-specific files
+# ------------------------------
+.DS_Store
+Thumbs.db
+
+# ------------------------------
+# Zip / Backup / Temporary Files
+# ------------------------------
+*.zip
+*.tar
+*.gz
+*.bak
+*.old
+*.tmp
+
+# ------------------------------
+# Deployment / Build
+# ------------------------------
+build/
+dist/
+*.egg-info/
+*.spec
+
+# ------------------------------
+# Reports / Outputs
+# ------------------------------
+/report_output/
+/logs/
+*.xlsx
+*.csv
+
+# ------------------------------
+# Custom Project-Specific
+# ------------------------------
+# Ignore generated files or backups in project
+elicita*.zip
+columns_old.py
+log.py
+report.py
+
+# ------------------------------
+# Git
+# ------------------------------
+# Exclude your GitHub credentials or tokens
+.git-credentials
+.gitconfig

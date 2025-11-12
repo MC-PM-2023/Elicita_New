@@ -1,0 +1,31 @@
+# bytecode / caches
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+# virtualenvs & IDE
+.venv/
+.env
+.vscode/
+.idea/
+*.egg-info/
+# git
+.git/
+.gitignore
+# logs / temp / artifacts
+*.log
+*.tmp
+*.bak
+*.zip
+*.tar
+*.tar.gz
+*.db
+*.sqlite3
+.DS_Store
+# tests & local assets
+tests/
+node_modules/
+
+
+
+
