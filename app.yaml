@@ -1,33 +1,32 @@
-runtime: python312
-env: standard
-# gunicorn will call your factory function
-entrypoint: gunicorn -b :$PORT app:create_app()
-instance_class: F2
+runtime: python311
+service: elicita-backend   # all lowercase, no spaces
+
+instance_class: F2         # or F1; change if you need more power
+
+entrypoint: gunicorn -b :$PORT app:app
+
+env_variables:
+  APP_ENV: "prod"
+
+  # DB credentials (same as you use now)
+  DB_USER: "appsadmin"
+  DB_PWD: "appsadmin2025"
+  DB_NAME: "Elicita_V2"
+
+  # Cloud SQL instance (from your screenshot)
+  INSTANCE_CONNECTION_NAME: "theta-messenger-459613-p7:asia-south1:appsadmin"
+
+  # Session / CORS
+  SECRET_KEY: "change-this-in-prod"
+  FRONTEND_ORIGINS: "https://your-frontend-domain.com"
+
+  # Optional – only if you really use a custom cookie domain
+  # SESSION_COOKIE_DOMAIN: ".datasolve-analytics.net"
+
+beta_settings:
+  # This mounts the Unix domain socket at /cloudsql/INSTANCE_CONNECTION_NAME
+  cloud_sql_instances: "theta-messenger-459613-p7:asia-south1:appsadmin"
+
 handlers:
   - url: /.*
     script: auto
-# scale settings (tune as you like)
-automatic_scaling:
-  target_cpu_utilization: 0.65
-  min_instances: 1
-  max_instances: 3
-inbound_services:
-  - warmup
-env_variables:
-  # ---- app mode & session/cookie ----
-  APP_ENV: "prod"
-  FRONTEND_ORIGINS: "https://logsy.datasolve-analytics.net"
-  SESSION_COOKIE_DOMAIN: ".datasolve-analytics.net"
-  SECRET_KEY: "change_this_in_prod"
-  # ---- MySQL (hosted in theta-messenger-459613-p7) ----
-  DB_USER: "appsadmin"
-  DB_PWD: "appsadmin2025"
-  DB_HOST: "34.93.75.171"
-  DB_NAME: "Elicita_V2"
-
-
-
-
-
-
-
