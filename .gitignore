@@ -82,9 +82,6 @@ dist/
 # ------------------------------
 # Ignore generated files or backups in project
 elicita*.zip
-columns_old.py
-log.py
-report.py
 
 # ------------------------------
 # Git
